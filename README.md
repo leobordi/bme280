@@ -27,12 +27,10 @@ i bit 1,0 settano la modalità: 00 sleep mode, 01 e 10 forced mode, 11 normal mo
 In questo chip l'interfaccia I2C è selezionata di default.
 Il bme280 funge da slave ed il suo indirizzo nel bus I2C è 1110110 (0x76).
 
-* I2C write 
-Il master deve inviare l'indirizzo del device in write mode, poi invia a coppie
+* I2C write: Il master deve inviare l'indirizzo del device in write mode, poi invia a coppie
 di byte, l'indirizzo del registro su cui scrivere e il byte di dati da scrivere.
 
-* I2C read
-Per poter leggere un registro bisogna prima inviarlo in write mode.
+* I2C read: Per poter leggere un registro bisogna prima inviarlo in write mode.
 Poi bisogna iniziare un'altra transazione inviando l'indirizzo del device in read mode.
 Poi lo slave trasmetterà i dati a partire dal registro scritto inizialmente
 fino a che non si verifica un noackm e una condizione di stop.
